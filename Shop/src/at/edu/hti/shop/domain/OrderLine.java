@@ -27,17 +27,17 @@ public class OrderLine {
     return amount * product.getPrize();
   }
 
+  public double calcWeight() {
+    return amount * product.getWeight();
+  }
+
   @Override
   public boolean equals(Object obj) {
     if (!(obj instanceof OrderLine)) {
       return false;
     }
-
     OrderLine ol = (OrderLine) obj;
-    if (ol.getProduct().getId() == product.getId()) {
-      return true;
-    }
-    return false;
+    return ol.product.equals(product);
   }
 
   @Override

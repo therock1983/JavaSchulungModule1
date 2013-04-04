@@ -28,7 +28,7 @@ public class DefaultPriceStrategy implements IPriceCalculator {
   public double calulcatePrice(List<OrderLine> orderLines) {
     double sum = 0;
     for (OrderLine line : orderLines) {
-      sum += line.getProduct().getPrize() * line.getAmount();
+      sum += line.calcPrize();
     }
     if (sum < 10) {
       sum += 5;
